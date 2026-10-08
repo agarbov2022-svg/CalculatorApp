@@ -8,7 +8,7 @@
             {
                 Console.Clear();
                 Console.WriteLine("Console Calculator App");
-                Console.WriteLine(new string('-', 15));
+                Console.WriteLine(new string(c:'-', count:15));
 
                 Console.Write("a = ");
                 double a = double.Parse(Console.ReadLine() ?? throw new InvalidOperationException());
@@ -41,6 +41,14 @@
                         case "m":
                            OptionsManager.Multiply(a, b);
                             break;
+                        case "dr":
+                            OptionsManager.Add(a, b);
+                            break;
+                        case "ex":
+                            Console.Clear();
+                            Console.WriteLine("Doodbye");
+                            Console.ReadKey(intercept: true);
+                            return;
                     }
                 }
                 catch (InvalidOperationException ex)
@@ -48,7 +56,7 @@
                     Console.WriteLine(ex.Message);
                 }
                 Console.WriteLine("Press any key to continue...");
-                Console.ReadKey(true);
+                Console.ReadKey(intercept:true);
             }
         }
     }
