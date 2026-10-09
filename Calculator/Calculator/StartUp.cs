@@ -66,6 +66,15 @@ namespace Calculator
                             Console.WriteLine("Doodbye");
                             Console.ReadKey(intercept: true);
                             return;
+                        case "pow":
+                            OptionsManager.Power(a, b);
+                            break;
+                        case "log":
+                            OptionsManager.Log(a, b);
+                            break;
+                        case "fact":
+                            OptionsManager.Factorial(a, b);
+                            break;
                     }
                 }
                 catch (InvalidOperationException ex)
