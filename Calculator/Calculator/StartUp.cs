@@ -1,9 +1,20 @@
-﻿namespace Calculator
+﻿using System.Runtime.CompilerServices;
+
+namespace Calculator
 {
-    internal class StartUp
+    public class StartUp
     {
         static void Main(string[] args)
         {
+            bool isAuthorized = CheckCredentials();
+
+
+            if (!isAuthorized)
+            {
+                Console.WriteLine("Access denied");
+                Console.ReadKey(intercept: true);
+                return;
+            }
             while (true)
             {
                 Console.Clear();
@@ -41,6 +52,12 @@
                         case "m":
                            OptionsManager.Multiply(a, b);
                             break;
+                        case "d":
+                           OptionsManager.Divide(a, b);
+                            break;
+                        case "sabs":
+                            OptionsManager.SubtractAbs(a, b);
+                            break;
                     }
                 }
                 catch (InvalidOperationException ex)
@@ -50,6 +67,16 @@
                 Console.WriteLine("Press any key to continue...");
                 Console.ReadKey(true);
             }
+            
         }
+
+        private static bool CheckCredentials()
+        {
+            Console.Write("Enter password to gain access;");
+            string password = Console.ReadLine();
+            Console.Clear();
+            return password == Password;
+        }
+        private const string Password = "abcd1234";
     }
 }
