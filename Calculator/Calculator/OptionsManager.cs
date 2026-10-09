@@ -14,7 +14,10 @@ namespace Calculator
             "s - Subtract",
             "m - Multiply",
             "d - Divide",
-            "sabs - Subtract Abs "
+            "sabs - Subtract Abs ",
+            "dr - Divide Remainder",
+            "ex - Exit",
+
              };
 
         public static void Add(double a, double b)
