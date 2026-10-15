@@ -76,5 +76,11 @@ namespace Calculator
         {
             Console.WriteLine($"Log of {a} with base {b} = {Math.Log(a, b)}");
         }
+
+        public static void DivideRemainder(double a, double b)
+        {
+            Console.WriteLine($"{a}% {b} = {a % b}");
+
+        }
     }
 }
